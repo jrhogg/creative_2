@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 2</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+
+    <h1>Space X Rockets</h1>
+    <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" id="falH" onclick="openRocket(event, 'FalconHeavy')">Falcon Heavy</button>
+  <button class="tablinks" id="fal1" onclick="openRocket(event, 'Falcon1')"> Falcon 1</button>
+  <button class="tablinks" id="fal9" onclick="openRocket(event, 'Falcon9')">Falcon 9</button>
+</div>
+
+<!-- Tab content -->
+<div id="FalconHeavy" class="tabcontent">
+  <div id = "heavyResults"> </div>
+</div>
+
+<div id="Falcon1" class="tabcontent">
+  <div id = "oneResults"> </div>
+</div>
+
+<div id="Falcon9" class="tabcontent">
+  <div id = "nineResults"> </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script text="type/javascript" src="/script.js">
+    </script>
+    <script>
+function openRocket(evt, rocketType) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(rocketType).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("falH").click();
+</script>
+  </body>
+  <footer>
+    <p>Hey TA's! Go
+    <a href="https://github.com/jrhogg/creative_2">here</a>.</p>
+  </footer>
+</html>
+
